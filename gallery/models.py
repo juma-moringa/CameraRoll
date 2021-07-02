@@ -1,3 +1,9 @@
 from django.db import models
 
 # Create your models here.
+class Image(models.Model):
+    image=models.ImageField(upload_to='images/')
+    image_name=models.CharField(max_length=200)
+    description=models.TextField()
+    location=models.ForeignKey()
+    category=models.ForeignKey()
