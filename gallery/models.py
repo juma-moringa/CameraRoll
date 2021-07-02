@@ -9,13 +9,12 @@ class Image(models.Model):
     # location=models.ForeignKey()
     # category=models.ForeignKey()
 
+    
+    def __str__(self):
+        return self.name
 
-
-#2nd class
 class Location(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=60)        
 
-
-#3rd class
-class Category(models.Model):
-    name = models.CharField(max_length=50)    
+    def __str__(self):
+        return self.name
