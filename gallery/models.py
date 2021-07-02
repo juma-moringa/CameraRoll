@@ -38,12 +38,29 @@ class Image(models.Model):
 
     
     def __str__(self):
-        return self.name
+        return self.image_name
 
+    #function to save the image.
     def save_image(self):
         self.save()
 
+    #function to delete the image.
     def delete_image(self):
         self.delete()
 
-    
+    #defined the search function.
+    @classmethod
+    def search_by_category(cls, category):
+        images = cls.objects.filter(category__name__icontains=category)
+        return images
+
+    #function to update the image.
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
+    #function to get the image by id.
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id=id).all()
+        return image
