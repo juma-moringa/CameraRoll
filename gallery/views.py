@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import Image, Location
 
 # Create your views here.
 def landing_page(request):
-    return render(request,'landing.html')
+    images = Image.objects.all()
+    locations = Location.get_image_locations()
+    return render(request,'landing.html',{ 'locations': locations})

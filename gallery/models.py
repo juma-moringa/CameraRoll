@@ -9,6 +9,12 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    @classmethod
+    def get_image_locations(cls):
+        locations = Location.objects.all()
+        return locations
+    
+
 
 #3rd Class   
 class Category(models.Model):
@@ -33,7 +39,7 @@ class Image(models.Model):
     
     def __str__(self):
         return self.name
-        
+
     def save_image(self):
         self.save()
 
