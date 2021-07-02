@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div class="container">
+    <div id="prog">
+        <h2><strong>Programming</strong> isn't about what you know; </br>its about what you can figure out.
+        </h2>
+    </div>
+    <div id="opennote">
+
+        <h3>Hello, my name is Juma Allan,</h3>
+        <p id="opennote"><strong>Programming</strong> isnt about what you know; </br>its about what you can figure out.
+        </p>
+    </div>
+    </br>
+
+    <a class="btn btn-info" href="{% url 'project' %}">photos</a>
+</div>
+
+{% endblock %}
