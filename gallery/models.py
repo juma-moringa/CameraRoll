@@ -5,5 +5,5 @@ class Image(models.Model):
     image=models.ImageField(upload_to='images/')
     image_name=models.CharField(max_length=200)
     description=models.TextField()
-    location=models.ForeignKey()
-    category=models.ForeignKey()
+    # location=models.ForeignKey()
+    # category=models.ForeignKey()
