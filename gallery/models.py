@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-#2nd class
+#2nd (Location class)
 class Location(models.Model):
     name = models.CharField(max_length=100)        
 
@@ -16,7 +16,7 @@ class Location(models.Model):
     
 
 
-#3rd Class   
+#3rd  (Category Class)  
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
@@ -28,7 +28,7 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()    
 
-# 1st class
+# 1st(Image class) 
 class Image(models.Model):
     image=models.ImageField(upload_to='images/')
     image_name=models.CharField(max_length=200)
