@@ -2,21 +2,26 @@
 
 {% block content %}
 {{block.super}}
-
 <div class="container">
-    <div id="prog">
-        <h2><strong>Programming</strong> isn't about what you know; </br>its about what you can figure out.
-        </h2>
-    </div>
-    <div id="opennote">
-
-        <h3>Hello, my name is Juma Allan,</h3>
-        <p id="opennote"><strong>Programming</strong> isnt about what you know; </br>its about what you can figure out.
-        </p>
-    </div>
-    </br>
-
-    <a class="btn btn-info" href="">photos</a>
+    {%for location in locations %}
+    <a href="{% url 'location' location.id %}">{{location}}</a>
+    {% endfor %}
 </div>
+<div class="container">
+    <div class="row">
+        {% for image in images %}
+        <div class="col-md-4">
+            <img src="{{image.image.url}}" alt="Image" class="img-fluid" data-toggle="modal"
+                data-target="#{{image.id}}">
+            <p>{{image.description}}</p>
+            <p>
+                {% for category in image.categories.all %}
+                <span class="badge badge-primary" style="font-size:1em;">{{category}}</span>
+                {% endfor %}
+            </p>
+        </div>
 
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
