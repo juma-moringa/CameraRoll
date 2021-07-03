@@ -64,6 +64,11 @@ class Image(models.Model):
     def get_image_by_id(cls, id):
         image = cls.objects.filter(id=id).all()
         return image
+    #function to get all the images and display in the landing page.    
+    @classmethod
+    def all_images(cls):
+        images = cls.objects.all()
+        return images
 
     #function to filter the image by location.   
     @classmethod

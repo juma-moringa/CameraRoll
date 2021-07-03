@@ -3,14 +3,30 @@ from django.shortcuts import render
 from .models import Image, Location
 
 # Create your views here.
+
 #landing_page
 def landing_page(request):
-    images = Image.objects.all()
-    locations = Location.get_image_locations()
+    images = Image.all_images()
+    locations = Location.objects.all()
+    return render(request, 'landing.html', {"images":images,"locations":locations})
 
-    return render(request,'landing.html')
+#image_location function to find the image results by location.
+def image_location(request, location):
+    images = Image.filter_by_location(location)
+    print(images)
+    return render(request, 'location.html', {'location_images': images})    
 
-#search view function of the results
+#image view function to find the image results by id.
+def image(request,image_id):
+    try:
+        image = Image.objects.get(id = image_id)
+    except Exception:
+        
+        raise Http404()
+    return render(request,"image.html", {"image":image})
+
+
+#search view function of the results.
 def search_results(request):
     if 'image_search' in request.GET and request.GET["image_search"]:
         category = request.GET.get("image_search")
@@ -22,10 +38,3 @@ def search_results(request):
         message = "You haven't searched for any image category present"
         return render(request,'search.html', {"message": message})
 
-def image(request,image_id):
-    try:
-        image = Image.objects.get(id = image_id)
-    except Exception:
-        
-        raise Http404()
-    return render(request,"image.html", {"image":image})
