@@ -4,15 +4,16 @@
 {{block.super}}
 <div class="container">
     {%for location in locations %}
-    <a href="{% url 'location' location.id %}">{{location}}</a>
+    <a  class="btn btn-default" href="{% url 'location' location.id %}">{{location}}</a>
     {% endfor %}
 </div>
 <div class="container">
     <div class="row">
         {% for image in images %}
-        <div class="col-md-4">
-            <img src="{{image.image.url}}" alt="Image" class="img-fluid" data-toggle="modal"
-                data-target="#{{image.id}}">
+        <div class="col-md-3">
+            <img src="{{image.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal"
+                data-target="#{{image.id}}" >
+                <!-- height="245px"  width="245px" -->
             <p>{{image.description}}</p>
             <p>
                 {% for category in image.categories.all %}
