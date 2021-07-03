@@ -51,7 +51,7 @@ class Image(models.Model):
     #defined the search function.
     @classmethod
     def search_by_category(cls, category):
-        images = cls.objects.filter(category__icontains=category)
+        images = cls.objects.filter(category__name__icontains=category)
         return images
 
     #function to update the image.
