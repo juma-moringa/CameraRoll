@@ -9,15 +9,16 @@ def landing_page(request):
 
     return render(request,'landing.html',{ 'locations': locations})
 
+
 #search view function of the results
 def search_results(request):
     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
         category = request.GET.get("imagesearch")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
-        print(searched_images)
-        return render(request, 'search_results.html', {"message": message, "images": searched_images})
+       
+        return render(request,'search-results.html', {"message": message, "images": searched_images})
     else:
         message = "You haven't searched for any image category present"
-        return render(request, 'search_results.html', {"message": message})
+        return render(request,'search-results.html', {"message": message})
 
