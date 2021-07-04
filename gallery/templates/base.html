@@ -14,16 +14,21 @@
 
     {% block styles %}
     {% bootstrap_css %}
-   
-    {% endblock %}
 
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- navbar -->
     {% include "navbar.html" %}
     {% block content %}
-   
+
     {%endblock%}
     <!-- bootstrap_css -->
     {% block scripts %}
@@ -33,4 +38,3 @@
 </body>
 
 </html>
-
