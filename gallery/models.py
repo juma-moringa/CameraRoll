@@ -8,7 +8,7 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
-        
+
     def save_location(self):
         self.save()
 
@@ -41,7 +41,7 @@ class Image(models.Model):
     image_name=models.CharField(max_length=200)
     description=models.TextField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE,default='0')
-    location = models.ForeignKey(Location ,on_delete=models.CASCADE,default='0')
+    location = models.ForeignKey(Location,on_delete=models.CASCADE,default='0')
 
     
     def __str__(self):

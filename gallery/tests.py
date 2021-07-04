@@ -3,8 +3,6 @@ from django.test import TestCase
 
 # Create your tests here.
 
-
-
 #test1
 class TestImage(TestCase):
     def setUp(self):
