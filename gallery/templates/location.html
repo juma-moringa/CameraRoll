@@ -2,13 +2,26 @@
 
 {% block content %}
 {{block.super}}
+{%if locations%}
+
 <div class="container">
-    {%for image in locations %}
-    <a class="btn btn-default" href="{% url 'location' location.id %}">{{location}},</a>
-
-    <img src="{{location.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal" data-target="#{{image.id}}">
-    <p>{{image.description}}</p>
-    {% endfor %}
+    <h3>This are the available images in :</h3>
 </div>
+{%for location in locations%}
 
+<div class="container">
+
+    <h3> {{location.location}}</h3>
+    <div class="row">
+        <div class="container">
+            <a data-toggle="modal" data-target="#pic">
+                <img src="{{location.image.url}}" class="card-img-top img-responsive styled" alt=" image" width="100px">
+            </a>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endif %}
 {% endblock %}

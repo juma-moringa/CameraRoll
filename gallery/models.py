@@ -8,6 +8,7 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+      
 
     @classmethod
     def get_image_locations(cls):
@@ -73,5 +74,5 @@ class Image(models.Model):
     #function to filter the image by location.   
     @classmethod
     def filter_by_location(cls, location):
-        image_location = Image.objects.filter(location__name=location).all()
+        image_location = cls.objects.filter(location__name=location).all()
         return image_location

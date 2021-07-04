@@ -9,19 +9,14 @@ def landing_page(request):
     images = Image.all_images()
     locations = Location.objects.all()
     return render(request, 'landing.html', {"images":images,"locations":locations})
-    
-def location(request,location):
-    locations = Location.objects.all()
-    selected_location = Location.objects.get(id = location)
-    images = Image.objects.filter(location = selected_location.id)
-    return render(request, 'location.html', {"location":selected_location,"locations":locations,"images":images})
-
 
 #image_location function to find the image results by location.
-def image_location(request, location):
-    images = Image.filter_by_location(location)
-    print(images)
-    return render(request, 'location.html', {'location_images': images})    
+def location(request,location):
+    # locations = Location.objects.all()
+    # selected_location = Location.objects.get(id = location)
+    # images = Image.objects.filter(location = selected_location.id)
+    locations = Image.filter_by_location(location)
+    return render(request,'location.html',{"locations":locations}) 
 
 #image view function to find the image results by id.
 def image(request,image_id):
