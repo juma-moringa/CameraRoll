@@ -14,7 +14,7 @@
         {% for image in images %}
         <div class="col-md-3">
             <img src="{{image.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal"
-                data-target="#{{image.id}}">
+                data-target="#{{image.id}}" style="height:350px; width:350px;">
             <p>{{image.description}}</p>
             <!-- Modal -->
             <div id="{{image.id}}" class="modal fade" role="dialog">
