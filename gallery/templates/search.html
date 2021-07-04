@@ -1,25 +1,28 @@
-{%extends 'base.html'%} 
+{%extends 'base.html'%}
 {% block content %}
 <div class="container" style="font-family: 'Caveat', cursive;">
 
   <div class="row">
     {% if images %}
-      <h3>Found {{ images|length }} of searched image {{message}} Category.</h3>
+    <h3>Found {{ images|length }} of searched image {{message}} Category.</h3>
     {% else %}
-      <h2> Found 0 images for the search term {{message}} category.</h2>
+    <h2> Found 0 images for the search term {{message}} category.</h2>
     {% endif %}
 
   </div>
 
   <div class="row">
 
-  {% if images %}
+    {% if images %}
     {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image.image_name}}</h1>
-      </div>
+    <div class="col-sm-6 col-md-3">
+      <h1>{{image.image_name}}</h1>
+      <img src="{{category.image.image.url}}" class="card-img-top img-responsive styled" alt=" image" 
+        style="height:350px; width:350px;">
+
+    </div>
     {% endfor %}
-  {% endif %}
+    {% endif %}
   </div>
 </div>
 {% endblock %}
