@@ -8,6 +8,7 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+        
     def save_location(self):
         self.save()
 
@@ -27,7 +28,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-        
+
     def save_category(self):
         self.save()
 
