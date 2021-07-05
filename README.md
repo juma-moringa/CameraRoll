@@ -15,25 +15,27 @@ Search for different categories and to View photos based on the location they we
 
 ## Setting up the project and Installation of Requirements.
 
-To get the project you need to clone the repository:
+* To get the project you need to clone the repository:
 
 https://github.com/juma-moringa/CameraRoll.git
 
-1. Move to the folder and install requirements:
+1. Move to the folder:
 
  $ cd CameraRoll
-open the folder on your text editor
+Open the folder on your text editor
+
+2. Installing the requirements:
 pip install -r requirements.txt
 
-2. Setup Configurations and Database
+3. Setup Configurations and Database:
 
 python3 manage.py makemigrations gallery
 
-3. Running the application
+4. Running the application:
 
 python3 manage.py runserver
 
-4. Testing the application
+5. Testing the application:
 
 python3 manage.py test gallery
 
@@ -62,6 +64,6 @@ python3 manage.py test gallery
 
 ## License
 
-The project is under the [MIT](LICENSE) license.
+CameraRoll is under the [MIT](LICENSE) license.
 
 @jaycreations-2021
