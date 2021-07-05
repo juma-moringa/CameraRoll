@@ -8,7 +8,7 @@ from .models import Image, Location
 def landing_page(request):
     images = Image.all_images()
     locations = Location.objects.all()
-    return render(request, 'landing.html', {"images":images,"locations":locations})
+    return render(request, 'landing.html', {"images":images[::-1],"locations":locations})
 
 #image_location function to find the image results by location.
 def location(request,location):
