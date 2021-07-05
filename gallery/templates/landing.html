@@ -2,82 +2,93 @@
 
 {% block content %}
 {{block.super}}
-
-
-<div class="container" style="font-family: 'Caveat', cursive;">
-    <h1 style="font-family: 'Permanent Marker', cursive; text-align: center;">Jays CameraRoll</h1>
-    <p style="font-size: 20px;">
-        Jays CameraRoll where we are Celebrating the art of the game with unexpected delights.<br>Maybe it’s time to
-        admit that the CameraRoll is the most awaited gallery of all time.
-    </p>
-</div>
-<br>
-<div class="container" style="font-family: 'Caveat', cursive; font-size:20px ; font-weight:bold">
-    <div class="row">
-        {% for image in images %}
-        <div class="col-md-3 col-sm-6 " >
-            <img src="{{image.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal"
-                data-target="#{{image.id}}" style="height:350px; width:350px;">
-            <p style="text-align: center;">{{image.image_name}}</p>
-            <!-- Modal -->
-            <div id="{{image.id}}" class="modal fade" role="dialog">
-                <div class="modal-dialog image">
-
-                    <!-- Modal content photo with info button -->
-                    <div class="modal-content ">
-                        <div class="modal-header">
-                            <h4 class="modal-title" style="text-align: center;">{{image.image_name}}</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="{{image.image.url}}" alt="" class="img-thumbnail">
-                        </div>
-                        <div class="modal-footer">
-                            <svg data-toggle="modal" data-target="#{{image.id}}-info" xmlns="http://www.w3.org/2000/svg"
-                                width="30" height="30" fill="currentColor" class="bi bi-info-circle"
-                                viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path
-                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" data-dismiss="modal" width="30" height="30"
-                                fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
-                            </svg>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- 2nd Modal -->
-            <div id="{{image.id}}-info" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- 2nd Modal content with  image description -->
-                    <div class="modal-content ">
-                        <div class="modal-header">
-                            <h3 class="modal-title" style="text-align: center;"> Location:{{image.location.name}}</h3>
-
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h4 class="modal-title">Image name: {{image.image_name}}.</h4>
-                            <p> Description: {{image.description}} .</p>
-                        </div>
-                        <div class="modal-footer">
-                            <p style="text-align: center;">Image link</p>
-                            <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="">
-                            <br>
-                            <button class="btn btn-primary">Copy to clipboard</button>
-                        </div>
-                    </div>
-                    <!-- 2nd Modal content -->
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+<style>
+    #b{
+        background: linear-gradient(0.25turn, #F56217, #98daf7, #938cf8, #f5a147, #98daf7);
+    border: none;
+    border-radius: 0%;
+    margin: 0%;
+    }
+  
+</style>
+<div id="bg">
+    <div class="container" style="font-family: 'Caveat ', cursive;" id="banner">
+        <h1 style="font-family: 'Permanent Marker', cursive; text-align: center;">Jays CameraRoll</h1>
+        <p style="font-size: 20px;text-align: center; font-family: 'Caveat ', cursive;">
+            Jays CameraRoll where we are Celebrating the art of the game with unexpected delights.<br>Maybe it’s time to
+            admit that the CameraRoll is the most awaited gallery of all time.
+        </p>
     </div>
-    {% endblock %}
+    <br>
+    <div class="container" style="font-family: 'Caveat', cursive; font-size:20px ; font-weight:bold">
+        <div class="row">
+            {% for image in images %}
+            <div class="col-md-3 col-sm-6 ">
+                <img src="{{image.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal"
+                    data-target="#{{image.id}}" style="height:350px; width:350px;">
+                <p style="text-align: center;">{{image.image_name}}</p>
+                <!-- Modal -->
+                <div id="{{image.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog image">
+
+                        <!-- Modal content photo with info button -->
+                        <div class="modal-content ">
+                            <div class="modal-header">
+                                <h4 class="modal-title" style="text-align: center;">{{image.image_name}}</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{image.image.url}}" alt="" class="img-thumbnail">
+                            </div>
+                            <div class="modal-footer">
+                                <svg data-toggle="modal" data-target="#{{image.id}}-info"
+                                    xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-info-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" data-dismiss="modal" width="30" height="30"
+                                    fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                </svg>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 2nd Modal -->
+                <div id="{{image.id}}-info" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- 2nd Modal content with  image description -->
+                        <div class="modal-content ">
+                            <div class="modal-header">
+                                <h3 class="modal-title" style="text-align: center;"> Location:{{image.location.name}}
+                                </h3>
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="modal-title">Image name: {{image.image_name}}.</h4>
+                                <p> Description: {{image.description}} .</p>
+                            </div>
+                            <div class="modal-footer">
+                                <p style="text-align: center;">Image link</p>
+                                <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="">
+                                <br>
+                                <button class="btn btn-primary">Copy to clipboard</button>
+                            </div>
+                        </div>
+                        <!-- 2nd Modal content -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+    </div>

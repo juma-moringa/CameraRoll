@@ -53,6 +53,9 @@ python3 manage.py test gallery
    which is activated by typing the following command on your terminal :( source/bin/activate )
 4. heroku
 
+
+## Enjoy :)
+
 ## Live Link
 
 [View Site](add the live link)
@@ -60,3 +63,5 @@ python3 manage.py test gallery
 ## License
 
 The project is under the [MIT](LICENSE) license.
+
+@jaycreations-2021
