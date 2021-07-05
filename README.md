@@ -60,7 +60,7 @@ python3 manage.py test gallery
 
 ## Live Link
 
-[View Site](add the live link)
+[View Live Site.](https://cameraroll.herokuapp.com/)
 
 ## License
 
