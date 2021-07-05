@@ -21,7 +21,7 @@ https://github.com/juma-moringa/CameraRoll.git
 
 1. Move to the folder:
 
- $ cd CameraRoll
+* $ cd CameraRoll
 * Open the folder on your text editor
 
 2. Installing the requirements:

@@ -22,7 +22,7 @@
     <br>
     <div class="container" style="font-family: 'Caveat', cursive; font-size:20px ; font-weight:bold">
         <div class="row">
-            {% for image in images %}
+            {% for image in images[::-1]%}
             <div class="col-md-3 col-sm-6 ">
                 <img src="{{image.image.url}}" alt="Image" class="img-thumbnail" data-toggle="modal"
                     data-target="#{{image.id}}" style="height:350px; width:350px;">

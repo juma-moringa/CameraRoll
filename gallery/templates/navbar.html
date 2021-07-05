@@ -32,7 +32,7 @@
             aria-haspopup="true" aria-expanded="false" style="color: black; font-size:20px">Location
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            {% for location in locations %}
+            {% for location in locations[::-1]%}
             <ul>
               <li>
                 <a class="dropdown-item; display: none; position: absolute; background-color: #f9f9f9;
