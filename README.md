@@ -17,7 +17,7 @@ Search for different categories and to View photos based on the location they we
 
 * To get the project you need to clone the repository:
 
-https://github.com/juma-moringa/CameraRoll.git
+ * $ git clone https://github.com/juma-moringa/CameraRoll.git
 
 1. Move to the folder:
 
