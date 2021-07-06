@@ -16,6 +16,21 @@ import dj_database_url
 from decouple import config,Csv
 
 
+
+
+from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(
+  cloud_name = "cameraroll",
+  api_key = "866675233265549",
+  api_secret = "fusVvTZC5TfGZJT3OJ9uUytL7uU",
+  secure = True
+)
+
+
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
